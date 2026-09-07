@@ -40,78 +40,6 @@
       "Children": []
     },
     {
-      "__guid": "4f700d14-4cd8-42db-8eb9-41bcb82bf3ce",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "barrel",
-      "Position": "-338.441742,-186.512497,64.000061",
-      "Rotation": "0,0,0,1",
-      "Scale": "2.6631608,2.6631608,2.6631608",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "9d6ed304-8a89-46dd-95f1-e81b9600ab4f",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/props/barrel/barrel.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "c74454c6-9837-411b-a877-f9e983c67a93",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0.00762462616,5.7220459E-06,11.2002783",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "16.1307144,16.1459541,22.6045704",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
       "__guid": "f7243c58-1e5b-46c2-ac65-ddbf955ec1e8",
       "__version": 2,
       "Flags": 0,
@@ -179,6 +107,20 @@
           "Static": false,
           "Surface": null,
           "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "PickupItem",
+          "__guid": "9dcb28a9-1775-4f0f-90d5-801034d6dc81",
+          "__enabled": true,
+          "Flags": 0,
+          "DisplayName": "Бочка 2",
+          "InteractionText": "Pick Up",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
@@ -257,6 +199,8 @@
           "__guid": "c4d49dc1-d9dc-47cd-8e55-53d4e5cd2995",
           "__enabled": true,
           "Flags": 0,
+          "DisplayName": "Бочка 1",
+          "InteractionText": "Pick Up",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -461,6 +405,31 @@
           "RemoveUnownedItems": true,
           "Source": "OwnerConnection",
           "WorkshopItems": []
+        },
+        {
+          "__type": "PlayerInteractor",
+          "__guid": "2f489537-7c68-4d4c-afac-b59cc832c6a4",
+          "__enabled": true,
+          "Flags": 0,
+          "Camera": {
+            "_type": "component",
+            "component_id": "6ae960d1-77a0-4840-9fe4-52cd7b43bbdb",
+            "go": "94595b26-30e9-42c5-93e8-094c7f1f4d36",
+            "component_type": "CameraComponent"
+          },
+          "Distance": 300,
+          "InteractionPrompt": {
+            "_type": "component",
+            "component_id": "7b469fc9-8db8-47f7-b511-09517624d445",
+            "go": "f1759a9b-a3f5-4b2c-8757-3922491e6626",
+            "component_type": "InteractionPrompt"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
@@ -605,7 +574,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Camera",
-          "Position": "0,0,2.75003815",
+          "Position": "1.20024109,-8.00003052,4.4021759",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "maincamera",
@@ -644,6 +613,240 @@
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
               "ZNear": 10
+            }
+          ],
+          "Children": []
+        }
+      ]
+    },
+    {
+      "__guid": "f1759a9b-a3f5-4b2c-8757-3922491e6626",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "uiItem",
+      "Position": "-204.954453,-205.983292,156.387772",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.WorldPanel",
+          "__guid": "75ea5f39-8880-4762-940f-9aad0ad34f2a",
+          "__enabled": true,
+          "Flags": 0,
+          "HorizontalAlign": "Center",
+          "InteractionRange": 1000,
+          "LookAtCamera": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PanelSize": "512,512",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
+        },
+        {
+          "__type": "InteractionPrompt",
+          "__guid": "7b469fc9-8db8-47f7-b511-09517624d445",
+          "__enabled": true,
+          "Flags": 0,
+          "ActionText": {
+            "_type": "component",
+            "component_id": "8e8583fb-8851-4b24-ab6a-daa03ee6a461",
+            "go": "696c53da-6354-4f4b-9926-4fb992d940b9",
+            "component_type": "TextRenderer"
+          },
+          "Camera": {
+            "_type": "component",
+            "component_id": "6ae960d1-77a0-4840-9fe4-52cd7b43bbdb",
+            "go": "94595b26-30e9-42c5-93e8-094c7f1f4d36",
+            "component_type": "CameraComponent"
+          },
+          "ObjectNameText": {
+            "_type": "component",
+            "component_id": "72725d49-8e12-48b9-934d-1ace68dd1374",
+            "go": "bca2d2d3-dd5f-40b5-9fc9-4f08bc999617",
+            "component_type": "TextRenderer"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "bca2d2d3-dd5f-40b5-9fc9-4f08bc999617",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "ObjectName",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.TextRenderer",
+              "__guid": "72725d49-8e12-48b9-934d-1ace68dd1374",
+              "__enabled": true,
+              "Flags": 0,
+              "__version": 2,
+              "Billboard": "None",
+              "BlendMode": "Normal",
+              "FogStrength": 1,
+              "HorizontalAlignment": "Center",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "Scale": 0.3,
+              "TextScope": {
+                "Text": "Test",
+                "TextColor": "0.45103,0.47149,0.5297,1",
+                "FontName": "Poppins",
+                "FontSize": 64,
+                "FontWeight": 800,
+                "FontItalic": false,
+                "FontVariantNumeric": "Normal",
+                "LineHeight": 1,
+                "LetterSpacing": 0,
+                "WordSpacing": 0,
+                "FilterMode": "Bilinear",
+                "FontSmooth": "Auto",
+                "Outline": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,1,1"
+                },
+                "Shadow": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                },
+                "OutlineUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,1,0,1"
+                },
+                "ShadowUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                }
+              },
+              "VerticalAlignment": "Center"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "696c53da-6354-4f4b-9926-4fb992d940b9",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "ActionText",
+          "Position": "0,0,-21.9440002",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.TextRenderer",
+              "__guid": "8e8583fb-8851-4b24-ab6a-daa03ee6a461",
+              "__enabled": true,
+              "Flags": 0,
+              "__version": 2,
+              "Billboard": "None",
+              "BlendMode": "Normal",
+              "FogStrength": 1,
+              "HorizontalAlignment": "Center",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "Scale": 0.3,
+              "TextScope": {
+                "Text": "[E] Взять",
+                "TextColor": "0.45103,0.47149,0.5297,1",
+                "FontName": "Poppins",
+                "FontSize": 64,
+                "FontWeight": 800,
+                "FontItalic": false,
+                "FontVariantNumeric": "Normal",
+                "LineHeight": 1,
+                "LetterSpacing": 0,
+                "WordSpacing": 0,
+                "FilterMode": "Bilinear",
+                "FontSmooth": "Auto",
+                "Outline": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,1,1"
+                },
+                "Shadow": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                },
+                "OutlineUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,1,0,1"
+                },
+                "ShadowUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                }
+              },
+              "VerticalAlignment": "Center"
             }
           ],
           "Children": []

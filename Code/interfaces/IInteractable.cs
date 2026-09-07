@@ -4,5 +4,7 @@ public interface IInteractable
 {
     string DisplayName { get; }
 
+    string InteractionText { get; }
+
     void Interact();
 }

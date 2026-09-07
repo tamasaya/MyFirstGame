@@ -2,13 +2,16 @@ using Sandbox;
 
 public sealed class PlayerInteractor : Component
 {
-    private IInteractable CurrentTarget;
-
     [Property]
     public CameraComponent Camera { get; set; }
 
     [Property]
-    public float Distance { get; set; } = 150f;
+    public InteractionPrompt InteractionPrompt { get; set; }
+
+    [Property]
+    public float Distance { get; set; } = 300f;
+
+    private IInteractable CurrentTarget;
 
     protected override void OnUpdate()
     {
@@ -22,7 +25,7 @@ public sealed class PlayerInteractor : Component
 
     private void CheckTarget()
     {
-        var start = Camera.Transform.Position;
+        var start = Camera.WorldPosition;
         var end = start + Camera.Transform.World.Forward * Distance;
 
         var trace = Scene.Trace
@@ -31,23 +34,30 @@ public sealed class PlayerInteractor : Component
 
         if ( !trace.Hit )
         {
-            CurrentTarget = null;
+            SetTarget( null, null );
             return;
         }
 
-        var interactable  = trace.GameObject.Components.Get<IInteractable>();
+        var interactable =
+            trace.GameObject.Components.Get<IInteractable>();
 
-        if ( interactable == null )
+        SetTarget( interactable, trace.GameObject );
+    }
+
+    private void SetTarget( IInteractable newTarget, GameObject targetObject )
+    {
+        if ( CurrentTarget == newTarget )
+            return;
+
+        CurrentTarget = newTarget;
+
+        if ( CurrentTarget == null )
         {
-            CurrentTarget = null;
+            InteractionPrompt?.Hide();
             return;
         }
 
-        if ( CurrentTarget != interactable )
-        {
-            CurrentTarget = interactable;
-            Log.Info( $"Selected: {CurrentTarget.DisplayName}" );
-        }
+        InteractionPrompt?.Show( CurrentTarget, targetObject );
     }
 
     private void TryInteract()
