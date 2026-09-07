@@ -65,6 +65,6 @@ public sealed class PlayerInteractor : Component
         if ( CurrentTarget == null )
             return;
 
-        CurrentTarget.Interact();
+        CurrentTarget.Interact( GameObject );
     }
 }

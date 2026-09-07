@@ -9,8 +9,15 @@ public sealed class PickupItem : Component, IInteractable
     [Property]
     public string InteractionText { get; set; } = "Pick Up";
 
-    public void Interact()
+    public void Interact( GameObject interactor )
     {
-        Log.Info( $"Picked up: {DisplayName}" );
+        var inventory = interactor.Components.Get<Inventory>();
+
+        if ( inventory == null )
+            return;
+
+        inventory.AddItem( DisplayName, 1 );
+
+        GameObject.Destroy();
     }
 }
