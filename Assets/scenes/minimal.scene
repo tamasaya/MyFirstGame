@@ -713,7 +713,7 @@
               "__enabled": true,
               "Flags": 0,
               "__version": 2,
-              "Billboard": "None",
+              "Billboard": "Always",
               "BlendMode": "Normal",
               "FogStrength": 1,
               "HorizontalAlignment": "Center",
@@ -729,7 +729,7 @@
                 "BloomLayer": false,
                 "AfterUILayer": false
               },
-              "Scale": 0.3,
+              "Scale": 0.1322314,
               "TextScope": {
                 "Text": "Test",
                 "TextColor": "0.45103,0.47149,0.5297,1",
@@ -766,7 +766,7 @@
                   "Offset": "4,4"
                 }
               },
-              "VerticalAlignment": "Center"
+              "VerticalAlignment": "Top"
             }
           ],
           "Children": []
@@ -793,7 +793,7 @@
               "__enabled": true,
               "Flags": 0,
               "__version": 2,
-              "Billboard": "None",
+              "Billboard": "Always",
               "BlendMode": "Normal",
               "FogStrength": 1,
               "HorizontalAlignment": "Center",
@@ -809,7 +809,7 @@
                 "BloomLayer": false,
                 "AfterUILayer": false
               },
-              "Scale": 0.3,
+              "Scale": 0.1322314,
               "TextScope": {
                 "Text": "[E] Взять",
                 "TextColor": "0.45103,0.47149,0.5297,1",
@@ -846,7 +846,7 @@
                   "Offset": "4,4"
                 }
               },
-              "VerticalAlignment": "Center"
+              "VerticalAlignment": "Bottom"
             }
           ],
           "Children": []

@@ -24,9 +24,12 @@ public sealed class InteractionPrompt : Component
             return;
 
         GameObject.WorldPosition =
-            TargetObject.WorldPosition + Vector3.Up * 80f;
+            TargetObject.WorldPosition + Vector3.Up * 90f;
 
         var direction = Camera.WorldPosition - GameObject.WorldPosition;
+
+        ObjectNameText.Color = new Color( 1f, 0.65f, 0.2f );
+        ActionText.Color = new Color( 1f, 0.45f, 0.05f );
 
         GameObject.WorldRotation =
             Rotation.LookAt( direction ) *
