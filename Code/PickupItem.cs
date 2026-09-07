@@ -1,11 +1,13 @@
 using Sandbox;
 
-public sealed class PickupItem : Component
+// TEST PICKUP ITEM
+public sealed class PickupItem : Component, IInteractable
 {
-    [Property] public string DisplayName { get; set; } = "Бочка";
+    [Property]
+    public string DisplayName { get; set; } = "Barrel";
 
-    public void PickUp()
+    public void Interact()
     {
-        Log.Info( $"Picked up {DisplayName}" );
+        Log.Info( $"Picked up: {DisplayName}" );
     }
 }

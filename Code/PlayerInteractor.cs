@@ -2,7 +2,7 @@ using Sandbox;
 
 public sealed class PlayerInteractor : Component
 {
-    private PickupItem CurrentTarget;
+    private IInteractable CurrentTarget;
 
     [Property]
     public CameraComponent Camera { get; set; }
@@ -35,23 +35,26 @@ public sealed class PlayerInteractor : Component
             return;
         }
 
-        var pickup = trace.GameObject.Components.Get<PickupItem>();
+        var interactable  = trace.GameObject.Components.Get<IInteractable>();
 
-        if ( pickup == null )
+        if ( interactable == null )
         {
             CurrentTarget = null;
             return;
         }
 
-        if ( CurrentTarget != pickup )
+        if ( CurrentTarget != interactable )
         {
-            CurrentTarget = pickup;
+            CurrentTarget = interactable;
             Log.Info( $"Selected: {CurrentTarget.DisplayName}" );
         }
     }
 
     private void TryInteract()
     {
-        Log.Info( "Trying to interact" );
+        if ( CurrentTarget == null )
+            return;
+
+        CurrentTarget.Interact();
     }
 }
